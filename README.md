@@ -76,3 +76,7 @@ x	   y	x - y or y - x
 
 GCD = 14	
 
+**simulation results:**
+
+![image](https://github.com/user-attachments/assets/f7489ea2-6e7c-403b-ba35-edfe7d85a9b1)
+
