@@ -1,0 +1,33 @@
+module gcd_tb();
+reg clk,reset;
+reg [7:0] a, b;
+wire [7:0] gcd;
+gcd dut (clk,reset,a,b,gcd,done);
+initial begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial begin
+a=8'd48;
+b=8'd18;
+reset=1; #10 reset=0;
+wait(done);
+$display("test case1: a=%d, b=%d, gcd=%d", a, b,gcd); #10;
+a=8'd36;
+b=8'd24;
+reset=1; #10 reset=0;
+wait(done);
+$display("test case2: a=%d, b=%d, gcd=%d", a, b,gcd); #10;
+a=8'd64;
+b=8'd16;
+reset=1; #10 reset=0;
+wait(done);
+$display("test case3: a=%d, b=%d, gcd=%d", a, b,gcd); #10;
+a=8'd7;
+b=8'd5;
+reset=1; #10 reset=0;
+wait(done);
+$display("test case4: a=%d, b=%d, gcd=%d", a, b,gcd); #10 stop;
+
+end
+endmodule
